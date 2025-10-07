@@ -2,8 +2,7 @@
 """
 Clean Czech Document Anonymizer
 ===============================
-A precise anonymization system for Czech documents that detects and replaces
-sensitive personal data with anonymized markers while maintaining detailed mapping.
+A focused and reliable anonymization system for Czech documents.
 
 Usage:
     python anonymizer_clean.py input.docx [--output output.docx] [--level full]
@@ -29,20 +28,17 @@ except ImportError:
 # ========== Configuration ==========
 
 class AnonymizationLevel(Enum):
-    """Levels of anonymization aggressiveness"""
     MINIMAL = "minimal"
     STANDARD = "standard"
     FULL = "full"
 
 @dataclass
 class AnonymizationResult:
-    """Result of anonymization process"""
     original_text: str
     anonymized_text: str
     replacements: Dict[str, List[str]]
     statistics: Dict[str, int]
     processing_time: float
-    warnings: List[str]
 
 # ========== Utility Functions ==========
 
@@ -61,21 +57,22 @@ def setup_logging(level: str = "INFO") -> logging.Logger:
 # ========== Czech Name Detection ==========
 
 class CzechNameDetector:
-    """Precise Czech name detection"""
+    """Czech name detection with focused database"""
     
     def __init__(self):
         self.male_names = {
             'jan', 'petr', 'pavel', 'tomáš', 'martin', 'jaroslav', 'milan', 'františek',
             'josef', 'antonín', 'zdeněk', 'vladimír', 'stanislav', 'luděk', 'karel',
             'michal', 'david', 'lukáš', 'ondřej', 'jakub', 'matěj', 'adam', 'daniel',
-            'filip', 'mikuláš', 'vít', 'matyáš', 'kryštof', 'sebastian', 'benjamin'
+            'filip', 'mikuláš', 'vít', 'matyáš', 'kryštof', 'sebastian', 'benjamin',
+            'ondra', 'honza', 'pepa', 'míra', 'jirka', 'kuba', 'tonda', 'václav'
         }
         
         self.female_names = {
             'marie', 'jana', 'eva', 'hana', 'anna', 'věra', 'alena', 'lenka',
             'kateřina', 'lucie', 'petra', 'zuzana', 'iveta', 'monika', 'veronika',
             'tereza', 'barbora', 'adéla', 'karolína', 'kristýna', 'nikola', 'natálie',
-            'eliska', 'sophie', 'emma', 'olivia', 'amélie'
+            'eliska', 'sophie', 'emma', 'olivia', 'amélie', 'aneta', 'klára', 'julie'
         }
         
         self.surnames = {
@@ -83,7 +80,8 @@ class CzechNameDetector:
             'kučera', 'veselý', 'horák', 'němec', 'pokorný', 'pospíšil',
             'havel', 'bláha', 'krejčí', 'stárek', 'kříž', 'beneš', 'fiala',
             'moravec', 'barták', 'urban', 'polák', 'doležal', 'šimánek',
-            'nováková', 'svobodová', 'novotná', 'dvořáková', 'černá', 'procházková'
+            'nováková', 'svobodová', 'novotná', 'dvořáková', 'černá', 'procházková',
+            'kučerová', 'veselá', 'horáková', 'němcová', 'pokorná', 'pospíšilová'
         }
         
         self.surname_suffixes = {'ová', 'ek', 'ík', 'ák', 'ček', 'čík', 'ko', 'ka', 'ja', 'ský', 'cký'}
@@ -110,33 +108,37 @@ class PatternDetector:
     
     def _initialize_patterns(self) -> List[Tuple[str, str, bool]]:
         """Initialize detection patterns"""
-        patterns = [
-            # Birth dates
-            (r'\b\d{1,2}\.\s*\d{1,2}\.\s*\d{4}\b', 'DATE', False),
-            # Czech birth number (RČ)
-            (r'\b\d{2}[0156]\d{3,4}/\d{4}\b', 'BIRTH_ID', False),
-            # ID card number (with context)
-            (r'\b\d{9}\b', 'ID_CARD', True),
-            # Bank account
-            (r'\b\d{1,6}-\d{1,10}/\d{4}\b', 'BANK', False),
-            # IBAN
-            (r'\bCZ\d{2}(?:\s?\d){20}\b', 'BANK', False),
-            # Phone numbers
-            (r'(?:\+?420[\s\-]?)?(?<!\d)(?:\d{3}[\s\-]?){2}\d{3}(?!\d)', 'PHONE', False),
-            # Email addresses
-            (r'\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}\b', 'EMAIL', False),
-            # Addresses
-            (r'\b[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž\s]{2,30}\s+\d{1,4}(?:/\d{1,4})?,\s*\d{3}\s?\d{2}\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž\s]{2,20}\b', 'ADDRESS', False),
-        ]
+        patterns = []
+        
+        # Date patterns
+        patterns.append((r'\b\d{1,2}\.\s*\d{1,2}\.\s*\d{4}\b', 'DATE', False))
+        
+        # Czech birth number (RČ)
+        patterns.append((r'\b\d{2}[0156]\d{3,4}/\d{4}\b', 'BIRTH_ID', False))
+        
+        # ID card number (with context)
+        patterns.append((r'\b\d{9}\b', 'ID_CARD', True))
+        
+        # Bank account numbers
+        patterns.append((r'\b\d{1,6}-\d{1,10}/\d{4}\b', 'BANK', False))
+        patterns.append((r'\bCZ\d{2}(?:\s?\d){20}\b', 'BANK', False))
+        
+        # Phone numbers
+        patterns.append((r'(?:\+?420[\s\-]?)?(?<!\d)(?:\d{3}[\s\-]?){2}\d{3}(?!\d)', 'PHONE', False))
+        
+        # Email addresses
+        patterns.append((r'\b[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}\b', 'EMAIL', False))
+        
+        # Addresses
+        patterns.append((r'\b[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž\s]{2,30}\s+\d{1,4}(?:/\d{1,4})?,\s*\d{3}\s?\d{2}\s+[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž\s]{2,20}\b', 'ADDRESS', False))
         
         if self.level == AnonymizationLevel.FULL:
             patterns.extend([
-                # Social security numbers
                 (r'\b\d{3}\s?\d{2}\s?\d{3}\b', 'SOCIAL_SECURITY', False),
-                # Passport numbers
                 (r'\b[A-Z]{2}\d{6}\b', 'PASSPORT', False),
-                # Credit card numbers
-                (r'\b\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}\b', 'CREDIT_CARD', False)
+                (r'\b\d{4}[\s\-]?\d{4}[\s\-]?\d{4}[\s\-]?\d{4}\b', 'CREDIT_CARD', False),
+                (r'\b(?![IOQ])[A-HJ-NPR-Z0-9]{17}\b', 'VIN', False),
+                (r'\b[A-Z]{1,3}\s?[0-9]{1,4}[A-Z]?\b', 'PLATE', False)
             ])
         
         return patterns
@@ -153,7 +155,7 @@ class PatternDetector:
                     if not self._has_relevant_context(context, category):
                         continue
                 
-                # Skip if it looks like a legal reference
+                # Skip legal references
                 if self._is_legal_reference(text, match.start(), match.end()):
                     continue
                 
@@ -164,10 +166,10 @@ class PatternDetector:
     def _has_relevant_context(self, context: str, category: str) -> bool:
         """Check if context contains relevant keywords"""
         context_keywords = {
-            'ID_CARD': ['op', 'občansk', 'průkaz'],
-            'BANK': ['účet', 'bank', 'čísla'],
-            'PHONE': ['telefon', 'mobil', 'kontakt'],
-            'ADDRESS': ['adresa', 'bydliště', 'ulice']
+            'id_card': ['op', 'občansk', 'průkaz'],
+            'bank_account': ['účet', 'bank', 'čísla'],
+            'phone': ['telefon', 'mobil', 'kontakt'],
+            'address': ['adresa', 'bydliště', 'ulice']
         }
         
         keywords = context_keywords.get(category, [])
@@ -182,7 +184,7 @@ class PatternDetector:
 # ========== Main Anonymizer Class ==========
 
 class CleanAnonymizer:
-    """Clean anonymizer with precise detection"""
+    """Clean anonymizer with focused detection"""
     
     def __init__(self, level: AnonymizationLevel = AnonymizationLevel.STANDARD):
         self.level = level
@@ -194,7 +196,6 @@ class CleanAnonymizer:
         self.replacements: Dict[str, List[str]] = {}
         self.counters: Dict[str, int] = {}
         self.person_mappings: Dict[Tuple[str, str], str] = {}
-        self.warnings: List[str] = []
     
     def _new_tag(self, category: str) -> str:
         """Generate new anonymization tag"""
@@ -221,7 +222,7 @@ class CleanAnonymizer:
         return text[:start] + tag + text[end:]
     
     def anonymize_names(self, text: str) -> str:
-        """Anonymize names using precise detection"""
+        """Anonymize names using focused detection"""
         # Find potential names (capitalized words)
         name_pattern = re.compile(r'\b[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+\b')
         
@@ -301,10 +302,6 @@ class CleanAnonymizer:
     def get_statistics(self) -> Dict[str, int]:
         """Get anonymization statistics"""
         return dict(self.counters)
-    
-    def get_warnings(self) -> List[str]:
-        """Get processing warnings"""
-        return list(self.warnings)
 
 # ========== Document Processing ==========
 
@@ -350,8 +347,7 @@ class DocumentProcessor:
                 anonymized_text="",
                 replacements=self.anonymizer.replacements,
                 statistics=self.anonymizer.get_statistics(),
-                processing_time=processing_time,
-                warnings=self.anonymizer.get_warnings()
+                processing_time=processing_time
             )
             
         except Exception as e:
@@ -378,8 +374,7 @@ class DocumentProcessor:
                 anonymized_text=anonymized_text,
                 replacements=self.anonymizer.replacements,
                 statistics=self.anonymizer.get_statistics(),
-                processing_time=processing_time,
-                warnings=self.anonymizer.get_warnings()
+                processing_time=processing_time
             )
             
         except Exception as e:
@@ -482,11 +477,6 @@ def main():
         logger.info(f"Output document: {output_path}")
         logger.info(f"Processing time: {result.processing_time:.2f} seconds")
         logger.info(f"Statistics: {result.statistics}")
-        
-        if result.warnings:
-            logger.warning(f"Warnings: {len(result.warnings)}")
-            for warning in result.warnings:
-                logger.warning(f"  - {warning}")
         
         print(f"\n✅ Anonymization completed!")
         print(f"📄 Output: {output_path}")

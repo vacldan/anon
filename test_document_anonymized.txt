@@ -1,14 +1,14 @@
 SMLOUVA O PRACOVNÍM POMĚRU
 
 Zaměstnanec: [[PERSON_1]] [[PERSON_2]]
-[[PERSON_3]] narození: 15. března 1985
+Datum narození: 15. března 1985
 Rodné číslo: [[BIRTH_ID_1]]
-Adresa trvalého bydliště: [[PERSON_4]] [[ADDRESS_2]]1
-[[PERSON_5]]: [[PHONE_1]]
-[[PERSON_6]]: [[EMAIL_1]]
+Adresa trvalého bydliště: [[ADDRESS_2]]1
+Telefon: [[PHONE_1]]
+Email: [[EMAIL_1]]
 Bankovní účet: [[BANK_1]]
 
-[[PERSON_7]]: ABC s.r.o.
+Zaměstnavatel: ABC s.r.o.
 IČO: [[SOCIAL_SECURITY_1]]
 Sídlo: [[ADDRESS_1]]1
 

@@ -5,7 +5,7 @@ ANONYMIZATION MAPPING
   - Na Příkopě 15, 110 00 Praha 
 
 [[ADDRESS_2]]:
-  - náměstí 1, 110 00 Praha 
+  - Václavské náměstí 1, 110 00 Praha 
 
 [[BANK_1]]:
   - 123456-7890123456/0100
@@ -20,22 +20,7 @@ ANONYMIZATION MAPPING
   - Jan Novák
 
 [[PERSON_2]]:
-  - Novák Datum
-
-[[PERSON_3]]:
-  - Datum
-
-[[PERSON_4]]:
-  - Václavské Telefon
-
-[[PERSON_5]]:
-  - Telefon Email
-
-[[PERSON_6]]:
-  - Email Zaměstnavatel
-
-[[PERSON_7]]:
-  - Zaměstnavatel
+  - Novák
 
 [[PHONE_1]]:
   - +420 123 456 789
