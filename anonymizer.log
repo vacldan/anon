@@ -45,3 +45,9 @@
 2025-10-08 06:33:08,326 - INFO - Output document: test_document_anonymized.txt
 2025-10-08 06:33:08,326 - INFO - Processing time: 0.00 seconds
 2025-10-08 06:33:08,326 - INFO - Statistics: {'PERSON': 1, 'ADDRESS': 2, 'SOCIAL_SECURITY': 1, 'BANK': 1, 'EMAIL': 1, 'PHONE': 1, 'BIRTH_ID': 1}
+2025-10-08 06:41:25,737 - INFO - Initializing anonymizer with level: full
+2025-10-08 06:41:25,737 - INFO - Processing document: test_document.txt
+2025-10-08 06:41:25,748 - INFO - Anonymization completed successfully!
+2025-10-08 06:41:25,748 - INFO - Output document: test_document_anonymized.txt
+2025-10-08 06:41:25,748 - INFO - Processing time: 0.01 seconds
+2025-10-08 06:41:25,748 - INFO - Statistics: {'PERSON': 1, 'ADDRESS': 2, 'SOCIAL_SECURITY': 1, 'BANK': 1, 'EMAIL': 1, 'PHONE': 1, 'BIRTH_ID': 1}

@@ -1,5 +1,8 @@
-ANONYMIZATION MAPPING
+ANONYMIZACE DOKUMENTU - MAPA NÁHRAD
 ==================================================
+
+Vytvořeno: 08.10.2025 06:41:25
+Celkem náhrad: 8
 
 [[ADDRESS_1]]:
   - Na Příkopě 15, 110 00 Praha 
