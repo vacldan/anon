@@ -1,6 +1,6 @@
 SMLOUVA O PRACOVNÍM POMĚRU
 
-Zaměstnanec: [[PERSON_1]] [[PERSON_2]]
+Zaměstnanec: [[PERSON_1]]
 Datum narození: 15. března 1985
 Rodné číslo: [[BIRTH_ID_1]]
 Adresa trvalého bydliště: [[ADDRESS_2]]1

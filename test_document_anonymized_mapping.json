@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "created_at": "2025-10-07T14:45:26.696693",
+    "created_at": "2025-10-08T06:33:08.325410",
     "statistics": {
-      "PERSON": 2,
+      "PERSON": 1,
       "ADDRESS": 2,
       "SOCIAL_SECURITY": 1,
       "BANK": 1,
@@ -10,14 +10,11 @@
       "PHONE": 1,
       "BIRTH_ID": 1
     },
-    "total_replacements": 9
+    "total_replacements": 8
   },
   "replacements": {
     "[[PERSON_1]]": [
       "Jan Novák"
-    ],
-    "[[PERSON_2]]": [
-      "Novák"
     ],
     "[[ADDRESS_1]]": [
       "Na Příkopě 15, 110 00 Praha "

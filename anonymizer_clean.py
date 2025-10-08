@@ -226,43 +226,69 @@ class CleanAnonymizer:
         # Find potential names (capitalized words)
         name_pattern = re.compile(r'\b[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+\b')
         
-        def replace_name(match):
+        # First pass: find all potential names and their positions
+        potential_names = []
+        for match in name_pattern.finditer(text):
             word = match.group()
             cleaned = re.sub(r'[^\w]', '', word)
-            
-            # Check if it's likely a name
             if (self.name_detector.is_likely_first_name(cleaned) or 
                 self.name_detector.is_likely_surname(cleaned)):
+                potential_names.append((match.start(), match.end(), word, cleaned))
+        
+        # Second pass: group names into pairs and singles
+        processed_ranges = []
+        result_text = text
+        
+        i = 0
+        while i < len(potential_names):
+            start, end, word, cleaned = potential_names[i]
+            
+            # Skip if already processed
+            if any(not (end <= existing_start or start >= existing_end) 
+                   for existing_start, existing_end in processed_ranges):
+                i += 1
+                continue
+            
+            # Look for name pair (first name + surname)
+            if (i + 1 < len(potential_names) and 
+                self.name_detector.is_likely_first_name(cleaned) and
+                self.name_detector.is_likely_surname(potential_names[i + 1][3])):
                 
-                # Look for name pairs in nearby context
-                start, end = match.span()
-                next_text = text[end:end+50]  # Look ahead
-                next_words = re.findall(r'\b[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][a-záčďéěíňóřšťúůýž]+\b', next_text)
+                # Found name pair
+                next_start, next_end, next_word, next_cleaned = potential_names[i + 1]
+                key = (cleaned.lower(), next_cleaned.lower())
                 
-                for next_word in next_words[:1]:  # Check only next word
-                    next_cleaned = re.sub(r'[^\w]', '', next_word)
-                    if self.name_detector.is_likely_surname(next_cleaned):
-                        # Found name pair
-                        key = (cleaned.lower(), next_cleaned.lower())
-                        if key not in self.person_mappings:
-                            tag = self._new_tag("PERSON")
-                            self.person_mappings[key] = tag
-                        tag = self.person_mappings[key]
-                        self._add_replacement(tag, f"{word} {next_word}")
-                        return tag
-                
-                # Single name
-                key = (cleaned.lower(), "")
                 if key not in self.person_mappings:
                     tag = self._new_tag("PERSON")
                     self.person_mappings[key] = tag
+                
                 tag = self.person_mappings[key]
-                self._add_replacement(tag, word)
-                return tag
-            
-            return word
+                self._add_replacement(tag, f"{word} {next_word}")
+                
+                # Replace both words
+                result_text = self._replace_text(result_text, start, next_end, tag, f"{word} {next_word}")
+                processed_ranges.append((start, next_end))
+                i += 2  # Skip both words
+            else:
+                # Single name - only if it's a surname or very likely first name
+                if (self.name_detector.is_likely_surname(cleaned) or 
+                    (self.name_detector.is_likely_first_name(cleaned) and 
+                     not any(self.name_detector.is_likely_surname(potential_names[j][3]) 
+                            for j in range(i+1, min(i+3, len(potential_names)))))):
+                    
+                    key = (cleaned.lower(), "")
+                    if key not in self.person_mappings:
+                        tag = self._new_tag("PERSON")
+                        self.person_mappings[key] = tag
+                    
+                    tag = self.person_mappings[key]
+                    self._add_replacement(tag, word)
+                    result_text = self._replace_text(result_text, start, end, tag, word)
+                    processed_ranges.append((start, end))
+                
+                i += 1
         
-        return name_pattern.sub(replace_name, text)
+        return result_text
     
     def anonymize_patterns(self, text: str) -> str:
         """Anonymize detected patterns"""

@@ -19,9 +19,6 @@ ANONYMIZATION MAPPING
 [[PERSON_1]]:
   - Jan Novák
 
-[[PERSON_2]]:
-  - Novák
-
 [[PHONE_1]]:
   - +420 123 456 789
 
