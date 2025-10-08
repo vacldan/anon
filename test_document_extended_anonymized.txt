@@ -1,0 +1,32 @@
+SMLOUVA O PRACOVNÍM POMĚRU
+
+Zaměstnanec: [[PERSON_1]]
+Datum narození: 15. března 1985
+Rodné číslo: [[BIRTH_ID_1]]
+Adresa trvalého bydliště: [[ADDRESS_1]]1
+Telefon: [[PHONE_1]]
+Email: [[EMAIL_1]]
+Bankovní účet: [[BANK_1]]
+
+Zaměstnavatel: ABC s.r.o.
+IČO: [[ICO_1]]
+Sídlo: Na Příkopě 15, 110 00[[ADDRESS_2]]avírá na dobu neurčitou s nástupem 1. ledna 2024.
+
+DODATEČNÉ INFORMACE:
+
+P[[PERSON_1]]vák bude pracovat jako vedoucí oddělení.[[PERSON_1]]em Novákem jsme se dohodli na následujících po[[PERSON_1]]ch.
+Pana Nováka jsme informovali o všec[[PERSON_1]]ostech.
+Panu Novákovi bude po[[PERSON_1]] školení.
+O pánu Novákovi máme ve[[PERSON_1]]ré reference.
+S pánem Novákem budeme spolupracovat dlouhodobě[[PERSON_1]]ume[[PERSON_1]]je i Jana Nováková:[[PERSON_1[[PERSON_1]]áková je manželka pana N[[PERSON_1]]a.
+S Janou Novákovou jsme ta[[PERSON_2]]Janu Novákovou jsme pozvali n[[PERSON_2]]ně Novákové jsme vysvětlili sit[[PERSON_1]]
+O Janě Novákové máme také dobré informace.
+[[PERSON_1]]ovákovou budeme komunikovat.
+
+Kontaktn[[PERSON_1]]n Novák: jan.nov[[EMAIL_2]][[PHONE_2]]na No[[PERSON_1]]ana.novakova@e[[EMAIL_3]][PHONE_3]]_1]] Jan Novák: Václavské náměstí 1, 110 00 Praha 1
+- J[[PERSON_1]]ová: Na Příkopě 15, 110 [[PERSON_1]]ankovní účty:
+- Jan Novák: 123456-78901234[[PERSON_1]] Jana Novákov[[PERSON_[[BIRTH_ID_2]]100
+
+Rodná čísla:
+- Jan No[[BIRTH_ID_3]]/1234
+- Jana No[[BIRTH_ID_4]]722/5678

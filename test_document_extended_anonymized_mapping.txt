@@ -1,0 +1,60 @@
+ANONYMIZACE DOKUMENTU - MAPA NÁHRAD
+==================================================
+
+Vytvořeno: 08.10.2025 08:23:20
+Celkem náhrad: 23
+
+[[ADDRESS_1]]:
+  - Václavské náměstí 1, 110 00 Praha 
+
+[[ADDRESS_2]]:
+  - Na Příkopě 15, 110 00 Praha 
+
+[[BANK_1]]:
+  - 123456-7890123456/0100
+
+[[BIRTH_ID_1]]:
+  - 850315/1234
+
+[[BIRTH_ID_2]]:
+  - 7654321/0100
+
+[[BIRTH_ID_3]]:
+  - 850315/1234
+
+[[BIRTH_ID_4]]:
+  - 900722/5678
+
+[[EMAIL_1]]:
+  - jan.novak@email.cz
+
+[[EMAIL_2]]:
+  - jan.novak@email.cz
+
+[[EMAIL_3]]:
+  - ana.novakova@email.cz
+
+[[ICO_1]]:
+  - 12345678
+
+[[PERSON_1]]:
+  - Jan Novák
+  - Jana Nováková
+  - Janou
+  - Janu
+  - Novák
+  - Nováka
+  - Novákem
+  - Novákovi
+
+[[PERSON_2]]:
+  - Janě Novákové
+
+[[PHONE_1]]:
+  - +420 123 456 789
+
+[[PHONE_2]]:
+  - +420 123 456 789
+
+[[PHONE_3]]:
+  - 420 987 654

@@ -1,0 +1,72 @@
+{
+  "metadata": {
+    "created_at": "2025-10-08T08:23:20.744593",
+    "statistics": {
+      "PERSON": 2,
+      "BIRTH_ID": 4,
+      "BANK": 1,
+      "PHONE": 3,
+      "EMAIL": 3,
+      "ICO": 1,
+      "ADDRESS": 2
+    },
+    "total_replacements": 23
+  },
+  "replacements": {
+    "[[PERSON_1]]": [
+      "Jan Novák",
+      "Novák",
+      "Novákem",
+      "Nováka",
+      "Novákovi",
+      "Jana Nováková",
+      "Janou",
+      "Janu"
+    ],
+    "[[PERSON_2]]": [
+      "Janě Novákové"
+    ],
+    "[[BIRTH_ID_1]]": [
+      "850315/1234"
+    ],
+    "[[BIRTH_ID_2]]": [
+      "7654321/0100"
+    ],
+    "[[BIRTH_ID_3]]": [
+      "850315/1234"
+    ],
+    "[[BIRTH_ID_4]]": [
+      "900722/5678"
+    ],
+    "[[BANK_1]]": [
+      "123456-7890123456/0100"
+    ],
+    "[[PHONE_1]]": [
+      "+420 123 456 789"
+    ],
+    "[[PHONE_2]]": [
+      "+420 123 456 789"
+    ],
+    "[[PHONE_3]]": [
+      "420 987 654"
+    ],
+    "[[EMAIL_1]]": [
+      "jan.novak@email.cz"
+    ],
+    "[[EMAIL_2]]": [
+      "jan.novak@email.cz"
+    ],
+    "[[EMAIL_3]]": [
+      "ana.novakova@email.cz"
+    ],
+    "[[ICO_1]]": [
+      "12345678"
+    ],
+    "[[ADDRESS_1]]": [
+      "Václavské náměstí 1, 110 00 Praha "
+    ],
+    "[[ADDRESS_2]]": [
+      "Na Příkopě 15, 110 00 Praha "
+    ]
+  }
+}

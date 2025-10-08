@@ -1,0 +1,24 @@
+Tag,Původní_Hodnota,Kategorie
+[[ADDRESS_1]],"Václavské náměstí 1, 110 00 Praha ",ADDRESS
+[[ADDRESS_2]],"Na Příkopě 15, 110 00 Praha ",ADDRESS
+[[BANK_1]],123456-7890123456/0100,BANK
+[[BIRTH_ID_1]],850315/1234,BIRTH
+[[BIRTH_ID_2]],7654321/0100,BIRTH
+[[BIRTH_ID_3]],850315/1234,BIRTH
+[[BIRTH_ID_4]],900722/5678,BIRTH
+[[EMAIL_1]],jan.novak@email.cz,EMAIL
+[[EMAIL_2]],jan.novak@email.cz,EMAIL
+[[EMAIL_3]],ana.novakova@email.cz,EMAIL
+[[ICO_1]],12345678,ICO
+[[PERSON_1]],Jan Novák,PERSON
+[[PERSON_1]],Novák,PERSON
+[[PERSON_1]],Novákem,PERSON
+[[PERSON_1]],Nováka,PERSON
+[[PERSON_1]],Novákovi,PERSON
+[[PERSON_1]],Jana Nováková,PERSON
+[[PERSON_1]],Janou,PERSON
+[[PERSON_1]],Janu,PERSON
+[[PERSON_2]],Janě Novákové,PERSON
+[[PHONE_1]],+420 123 456 789,PHONE
+[[PHONE_2]],+420 123 456 789,PHONE
+[[PHONE_3]],420 987 654,PHONE

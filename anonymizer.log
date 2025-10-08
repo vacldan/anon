@@ -75,3 +75,21 @@
 2025-10-08 08:14:47,266 - INFO - Output document: test_document_anonymized.txt
 2025-10-08 08:14:47,267 - INFO - Processing time: 0.00 seconds
 2025-10-08 08:14:47,267 - INFO - Statistics: {'PERSON': 1, 'BIRTH_ID': 1, 'BANK': 1, 'PHONE': 1, 'EMAIL': 1, 'ICO': 1, 'ADDRESS': 2}
+2025-10-08 08:19:25,335 - INFO - Initializing anonymizer with level: standard
+2025-10-08 08:19:25,336 - INFO - Processing document: test_document_extended.txt
+2025-10-08 08:19:25,347 - INFO - Anonymization completed successfully!
+2025-10-08 08:19:25,347 - INFO - Output document: test_document_extended_anonymized.txt
+2025-10-08 08:19:25,347 - INFO - Processing time: 0.01 seconds
+2025-10-08 08:19:25,347 - INFO - Statistics: {'PERSON': 4, 'BIRTH_ID': 4, 'BANK': 1, 'PHONE': 3, 'EMAIL': 3, 'ICO': 1, 'ADDRESS': 2}
+2025-10-08 08:21:29,127 - INFO - Initializing anonymizer with level: standard
+2025-10-08 08:21:29,127 - INFO - Processing document: test_document_extended.txt
+2025-10-08 08:21:29,134 - INFO - Anonymization completed successfully!
+2025-10-08 08:21:29,134 - INFO - Output document: test_document_extended_anonymized.txt
+2025-10-08 08:21:29,134 - INFO - Processing time: 0.01 seconds
+2025-10-08 08:21:29,134 - INFO - Statistics: {'PERSON': 3, 'BIRTH_ID': 4, 'BANK': 1, 'PHONE': 3, 'EMAIL': 3, 'ICO': 1, 'ADDRESS': 2}
+2025-10-08 08:23:20,739 - INFO - Initializing anonymizer with level: standard
+2025-10-08 08:23:20,740 - INFO - Processing document: test_document_extended.txt
+2025-10-08 08:23:20,746 - INFO - Anonymization completed successfully!
+2025-10-08 08:23:20,746 - INFO - Output document: test_document_extended_anonymized.txt
+2025-10-08 08:23:20,746 - INFO - Processing time: 0.00 seconds
+2025-10-08 08:23:20,746 - INFO - Statistics: {'PERSON': 2, 'BIRTH_ID': 4, 'BANK': 1, 'PHONE': 3, 'EMAIL': 3, 'ICO': 1, 'ADDRESS': 2}
