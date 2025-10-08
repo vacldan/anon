@@ -51,3 +51,27 @@
 2025-10-08 06:41:25,748 - INFO - Output document: test_document_anonymized.txt
 2025-10-08 06:41:25,748 - INFO - Processing time: 0.01 seconds
 2025-10-08 06:41:25,748 - INFO - Statistics: {'PERSON': 1, 'ADDRESS': 2, 'SOCIAL_SECURITY': 1, 'BANK': 1, 'EMAIL': 1, 'PHONE': 1, 'BIRTH_ID': 1}
+2025-10-08 08:10:38,619 - INFO - Initializing anonymizer with level: standard
+2025-10-08 08:10:38,619 - INFO - Processing document: test_document.txt
+2025-10-08 08:10:38,634 - INFO - Anonymization completed successfully!
+2025-10-08 08:10:38,635 - INFO - Output document: test_document_anonymized.txt
+2025-10-08 08:10:38,635 - INFO - Processing time: 0.01 seconds
+2025-10-08 08:10:38,635 - INFO - Statistics: {'PERSON': 1, 'ADDRESS': 2, 'BANK': 1, 'EMAIL': 1, 'PHONE': 1, 'BIRTH_ID': 1}
+2025-10-08 08:12:31,772 - INFO - Initializing anonymizer with level: standard
+2025-10-08 08:12:31,772 - INFO - Processing document: test_document.txt
+2025-10-08 08:12:31,782 - INFO - Anonymization completed successfully!
+2025-10-08 08:12:31,782 - INFO - Output document: test_document_anonymized.txt
+2025-10-08 08:12:31,783 - INFO - Processing time: 0.01 seconds
+2025-10-08 08:12:31,783 - INFO - Statistics: {'PERSON': 1, 'ADDRESS': 2, 'BANK': 1, 'EMAIL': 1, 'PHONE': 1, 'BIRTH_ID': 1}
+2025-10-08 08:13:08,970 - INFO - Initializing anonymizer with level: standard
+2025-10-08 08:13:08,970 - INFO - Processing document: test_document.txt
+2025-10-08 08:13:08,975 - INFO - Anonymization completed successfully!
+2025-10-08 08:13:08,975 - INFO - Output document: test_document_anonymized.txt
+2025-10-08 08:13:08,976 - INFO - Processing time: 0.00 seconds
+2025-10-08 08:13:08,976 - INFO - Statistics: {'PERSON': 1, 'ADDRESS': 2, 'BANK': 1, 'EMAIL': 1, 'PHONE': 1, 'BIRTH_ID': 1}
+2025-10-08 08:14:47,260 - INFO - Initializing anonymizer with level: standard
+2025-10-08 08:14:47,260 - INFO - Processing document: test_document.txt
+2025-10-08 08:14:47,266 - INFO - Anonymization completed successfully!
+2025-10-08 08:14:47,266 - INFO - Output document: test_document_anonymized.txt
+2025-10-08 08:14:47,267 - INFO - Processing time: 0.00 seconds
+2025-10-08 08:14:47,267 - INFO - Statistics: {'PERSON': 1, 'BIRTH_ID': 1, 'BANK': 1, 'PHONE': 1, 'EMAIL': 1, 'ICO': 1, 'ADDRESS': 2}

@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "created_at": "2025-10-08T06:41:25.747055",
+    "created_at": "2025-10-08T08:14:47.265216",
     "statistics": {
       "PERSON": 1,
-      "ADDRESS": 2,
-      "SOCIAL_SECURITY": 1,
+      "BIRTH_ID": 1,
       "BANK": 1,
-      "EMAIL": 1,
       "PHONE": 1,
-      "BIRTH_ID": 1
+      "EMAIL": 1,
+      "ICO": 1,
+      "ADDRESS": 2
     },
     "total_replacements": 8
   },
@@ -16,26 +16,26 @@
     "[[PERSON_1]]": [
       "Jan Novák"
     ],
-    "[[ADDRESS_1]]": [
-      "Na Příkopě 15, 110 00 Praha "
-    ],
-    "[[SOCIAL_SECURITY_1]]": [
-      "12345678"
+    "[[BIRTH_ID_1]]": [
+      "850315/1234"
     ],
     "[[BANK_1]]": [
       "123456-7890123456/0100"
     ],
-    "[[EMAIL_1]]": [
-      "jan.novak@email.cz"
-    ],
     "[[PHONE_1]]": [
       "+420 123 456 789"
     ],
-    "[[ADDRESS_2]]": [
+    "[[EMAIL_1]]": [
+      "jan.novak@email.cz"
+    ],
+    "[[ICO_1]]": [
+      "12345678"
+    ],
+    "[[ADDRESS_1]]": [
       "Václavské náměstí 1, 110 00 Praha "
     ],
-    "[[BIRTH_ID_1]]": [
-      "850315/1234"
+    "[[ADDRESS_2]]": [
+      "Na Příkopě 15, 110 00 Praha "
     ]
   }
 }

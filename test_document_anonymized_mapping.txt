@@ -1,14 +1,14 @@
 ANONYMIZACE DOKUMENTU - MAPA NÁHRAD
 ==================================================
 
-Vytvořeno: 08.10.2025 06:41:25
+Vytvořeno: 08.10.2025 08:14:47
 Celkem náhrad: 8
 
 [[ADDRESS_1]]:
-  - Na Příkopě 15, 110 00 Praha 
+  - Václavské náměstí 1, 110 00 Praha 
 
 [[ADDRESS_2]]:
-  - Václavské náměstí 1, 110 00 Praha 
+  - Na Příkopě 15, 110 00 Praha 
 
 [[BANK_1]]:
   - 123456-7890123456/0100
@@ -19,11 +19,11 @@ Celkem náhrad: 8
 [[EMAIL_1]]:
   - jan.novak@email.cz
 
+[[ICO_1]]:
+  - 12345678
+
 [[PERSON_1]]:
   - Jan Novák
 
 [[PHONE_1]]:
   - +420 123 456 789
-
-[[SOCIAL_SECURITY_1]]:
-  - 12345678

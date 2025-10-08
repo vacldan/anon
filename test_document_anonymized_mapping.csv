@@ -1,9 +1,9 @@
 Tag,Původní_Hodnota,Kategorie
-[[ADDRESS_1]],"Na Příkopě 15, 110 00 Praha ",ADDRESS
-[[ADDRESS_2]],"Václavské náměstí 1, 110 00 Praha ",ADDRESS
+[[ADDRESS_1]],"Václavské náměstí 1, 110 00 Praha ",ADDRESS
+[[ADDRESS_2]],"Na Příkopě 15, 110 00 Praha ",ADDRESS
 [[BANK_1]],123456-7890123456/0100,BANK
 [[BIRTH_ID_1]],850315/1234,BIRTH
 [[EMAIL_1]],jan.novak@email.cz,EMAIL
+[[ICO_1]],12345678,ICO
 [[PERSON_1]],Jan Novák,PERSON
 [[PHONE_1]],+420 123 456 789,PHONE
-[[SOCIAL_SECURITY_1]],12345678,SOCIAL
