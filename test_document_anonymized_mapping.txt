@@ -1,0 +1,26 @@
+ANONYMIZATION MAPPING
+==================================================
+
+[[ADDRESS_1]]:
+  - Na Příkopě 15, 110 00 Praha 
+
+[[ADDRESS_2]]:
+  - Václavské náměstí 1, 110 00 Praha 
+
+[[BANK_1]]:
+  - 123456-7890123456/0100
+
+[[BIRTH_ID_1]]:
+  - 850315/1234
+
+[[EMAIL_1]]:
+  - jan.novak@email.cz
+
+[[PERSON_1]]:
+  - Jan Novák
+
+[[PHONE_1]]:
+  - +420 123 456 789
+
+[[SOCIAL_SECURITY_1]]:
+  - 12345678

@@ -1,0 +1,15 @@
+SMLOUVA O PRACOVNÍM POMĚRU
+
+Zaměstnanec: [[PERSON_1]]
+Datum narození: 15. března 1985
+Rodné číslo: [[BIRTH_ID_1]]
+Adresa trvalého bydliště: [[ADDRESS_2]]1
+Telefon: [[PHONE_1]]
+Email: [[EMAIL_1]]
+Bankovní účet: [[BANK_1]]
+
+Zaměstnavatel: ABC s.r.o.
+IČO: [[SOCIAL_SECURITY_1]]
+Sídlo: [[ADDRESS_1]]1
+
+Tato smlouva se uzavírá na dobu neurčitou s nástupem 1. ledna 2024.
