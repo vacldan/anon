@@ -1,17 +1,19 @@
 OSOBY
 -----
-[[PERSON_1]]: Jakub Doležal
-[[PERSON_2]]: Klára Malá
-[[PERSON_2]]: Kláry Malé
-[[PERSON_4]]: Petra Novotná
-[[PERSON_4]]: Petry Novotné
-[[PERSON_5]]: Michal Říha
-[[PERSON_5]]: Michalu Říhovi
+[[PERSON_1]]: Lukáš Mareček
+[[PERSON_1]]: Lukáše Marečka
+[[PERSON_2]]: Jakub Doležal
+[[PERSON_3]]: Klára Malá
+[[PERSON_3]]: Kláry Malé
+[[PERSON_5]]: Petra Novotná
+[[PERSON_5]]: Petry Novotné
 [[PERSON_6]]: Veronika Suchá
+[[PERSON_6]]: Veronice Suché
+[[PERSON_7]]: Michalu Říhovi
 
-OBČANSKÉ PRŮKAZY
-----------------
-[[ID_CARD_1]]: 555123456/0300
+BANKOVNÍ ÚČTY
+-------------
+[[BANK_1]]: 555123456/0300
 
 DATA
 ----
